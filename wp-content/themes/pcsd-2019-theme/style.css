@@ -1,0 +1,2160 @@
+/*
+	Theme Name: Provo City School District 2019
+	Author: District Web Team
+	Author URI: https://employee.provo.edu/technology/
+	Version: 2.0.17
+*/
+/*================================================================================================================
+Variables
+================================================================================================================*/
+:root {
+  --white: #ffffff;
+}
+
+/*================================================================================================================
+CSS Reset
+================================================================================================================*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 20px 0px 20px 0;
+}
+
+#mainContent p {
+  margin-left: 10px;
+}
+
+strong {
+  font-weight: 700;
+  font-size: 120%;
+}
+
+em {
+  font-style: italic;
+}
+
+.grecaptcha-badge {
+  display: none;
+}
+
+iframe,
+.powered-by {
+  display: none;
+}
+
+#wpadminbar {
+  top: auto;
+  bottom: 0;
+}
+
+/*================================================================================================================
+typography
+================================================================================================================*/
+a:hover h1,
+a:hover h2,
+a:hover h3 {
+  color: #fc7e02;
+}
+
+/*================================================================================================================
+General Purpose Styles
+================================================================================================================*/
+.hidden {
+  visibility: hidden;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+}
+
+ol li,
+ul li {
+  margin: 0.9375em 0 0.9375em 1em;
+  list-style-position: outside;
+}
+
+.noblt li,
+.noblt {
+  list-style: none;
+}
+
+.disc {
+  list-style: disc;
+}
+
+.left,
+.alignleft {
+  float: left;
+  margin-right: 25px;
+  display: block;
+}
+
+.right,
+.alignright {
+  float: right;
+  margin-left: 25px;
+  display: block;
+}
+
+.center,
+.aligncenter {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.bottom {
+  clear: both;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.clear {
+  width: 100%;
+  clear: both !important;
+}
+
+.noclear {
+  clear: none !important;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
+::-moz-scrollbar {
+  -webkit-appearance: none;
+  width: 0;
+}
+
+/* .twoColumn {
+  width: 46%;
+  float: left;
+  padding: 1% 2.5% 1% 2.5%;
+} */
+.video2column {
+  width: 45%;
+  float: left;
+  margin: 0 2% 10px 2%;
+}
+
+.threeColumn {
+  width: 29%;
+  float: left;
+  padding: 1% 2% 1% 2%;
+}
+
+.grid3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin: 0;
+}
+
+/*resets margin/padding for grid */
+.grid3col li {
+  padding: 0;
+  margin: 0;
+}
+
+.sectionIcon {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 21px;
+  top: 55px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+table td,
+table th {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table td {
+  text-align: center;
+}
+
+#mainContent form textarea,
+#mainContent form input {
+  border: #ccc solid 1px;
+  width: 100%;
+  display: inline;
+  padding: 5px 0 5px 10px;
+  margin-top: 10px;
+}
+
+#mainContent form input[type="submit"] {
+  width: 25%;
+  float: right;
+}
+
+.simcal-default-calendar-grid .simcal-day-number {
+  color: #fff;
+}
+
+.flexLinkList ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexLinkList ul li {
+  width: 25%;
+  padding-left: 3%;
+  padding-right: 3%;
+  list-style: none;
+  text-align: center;
+}
+
+.flexLinkList ul li img {
+  width: 100%;
+  float: right;
+}
+
+.wp-caption .wp-caption-text {
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 5px 0 5px 0;
+}
+
+/* styles for the shortcode schedule_start_list and schedule_end_list */
+.scheduleList ul li {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.scheduleList .grid2 {
+  grid-template-columns: 1fr;
+}
+@media(min-width:500px){
+  .scheduleList ul li {
+    grid-template-columns: 1fr max(25%);
+  }
+}
+@media(min-width:1100px){
+  .scheduleList ul li {
+    grid-template-columns: 1fr max(40%);
+  }
+  .scheduleList .grid2 {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width: 1170px) {
+  .threeColumn {
+    width: 46%;
+  }
+}
+
+@media (max-width: 940px) {
+
+  .threeColumn,
+  .twoColumn {
+    width: 96%;
+  }
+}
+
+/*================================================================================================================
+Overall Structural  Styles
+================================================================================================================*/
+#pcsdBranding {
+  height: 35px;
+  width: 100%;
+  position: fixed;
+  background-color: #dce3e8;
+  top: 0;
+  z-index: 1000;
+}
+
+#mainHeader {
+  height: 106px;
+  padding: 20px 20px 5px 30px;
+  position: fixed;
+  top: 35px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+#contentArea {
+  position: fixed;
+  top: 166px;
+  bottom: 45px;
+  width: calc(100% - 320px);
+  overflow-y: auto;
+  z-index: 0;
+  background-color: var(--secondary-color);
+}
+
+#mainContent {
+  padding-bottom: 40px;
+  background-color: var(--white);
+}
+
+#mainMenu {
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  top: 140px;
+  box-shadow: 0 3px 3px -2px #000;
+  left: 0;
+}
+
+#mainSidebar {
+  position: fixed;
+  width: 320px;
+  right: 0;
+  top: 166px;
+  bottom: 45px;
+  padding: 0!important;
+  color: #dce2e8;
+  overflow-y: auto;
+}
+#mainSidebar > * {
+  max-width: calc(100% - 2em);
+  margin:0 auto;
+  display: block;
+}
+#mainSidebar> section > a {
+  display: block;
+}
+#mainFooter {
+  height: 100px;
+  color: #dae1e7;
+  font-size: 1em;
+  line-height: 1.2em;
+  padding: 0 1%;
+  
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  right: 0;
+}
+
+
+#mainFooter ul.footerMenu {
+  position: relative;
+  margin-top: 15px;
+  margin-left:0;
+  list-style: none;
+}
+#mainFooter ul.footerMenu li {
+  display: block;
+}
+#mainFooter ul.footerMenu li a {
+  color: #fff;
+  padding-right: 10px;
+}
+@media (min-width: 500px) {
+  #mainFooter {
+    height: 45px;
+    position: fixed;
+  }
+  /* #mainFooter ul.footerMenu {
+    margin-top: 15px;
+  
+  } */
+  #mainFooter ul.footerMenu li {
+    display: inline;
+  }
+}
+@media (max-width: 750px) {
+
+  #mainSidebar,
+  #contentArea {
+    position: relative;
+    width: 100%;
+  }
+
+  #contentArea {
+    margin-top: 0;
+  }
+  
+}
+
+/*================================================================================================================
+Header Styles
+================================================================================================================*/
+#pcsdBranding img {
+  float: left;
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+#pcsdBranding h1 {
+  margin-top: 7px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#pcsdBranding a {
+  color: #02365b;
+}
+
+#mainHeader aside {
+  position: absolute;
+  right: 0px;
+  top: 25px;
+  width: 670px;
+}
+
+#mainHeader .sociallinks {
+  position: absolute;
+  right: 470px;
+  top: -7px;
+}
+
+#mainHeader .sociallinks li {
+  display: inline;
+  margin: 0 10px 0 0;
+}
+
+#mainHeader .sociallinks li img {
+  width: 35px;
+}
+
+#mainHeader #cludo-search-form label {
+  position: absolute;
+  left: -9999px;
+}
+
+#mainHeader #cludo-search-form .search-input {
+  width: 400px;
+  height: 35px;
+  position: absolute;
+  right: 55px;
+  top: -7px;
+  padding: 0;
+  margin: 0;
+}
+
+#mainHeader #cludo-search-form .search-submit {
+  width: 35px;
+  height: 35px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: -7px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  background-image: url(assets/icons/search-lt.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+
+#mainHeader .contactinfo {
+  margin-top: 30px;
+  list-style: none;
+  text-align: right;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+#mainHeader .contactinfo li {
+  font-size: 10px;
+}
+
+#mainHeader .contactinfo li:first-child {
+  font-size: 10px;
+}
+
+#mainHeader .contactinfo li span.phone,
+#mainHeader .contactinfo li span.fax {
+  margin-left: 17px;
+}
+
+/*
+================================================================================================================
+Main Menu
+================================================================================================================
+*/
+.mobile-menu {
+  display: none;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 166px;
+  box-shadow: 1px 3px 5px #000;
+  background-color: #fff;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+#mainMenu #reveal-menu {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+#mainMenu .mobileMenu {
+  display: none;
+}
+
+#mainMenu .mobileMenu img {
+  width: 13px;
+  margin-right: 7px;
+}
+
+#mainMenu>ul {
+  margin-top: 0px;
+  margin-left: 0;
+}
+
+#mainMenu>ul>li {
+  display: inline-block;
+  position: relative;
+  padding: 0 3%;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#mainMenu>ul>li:first-child {
+  padding-left: 15px;
+}
+
+#mainMenu>ul>li:last-child {
+  padding-right: 0;
+}
+
+nav>ul>li>a {
+  color: #fff;
+  display: block;
+  position: relative;
+  padding: 0px 0;
+  border-bottom: 3px solid transparent;
+}
+
+.mega-menu {
+  visibility: hidden;
+  opacity: 0;
+  left: 0;
+  position: fixed;
+  text-align: left;
+  width: 100%;
+  transition-delay: 0.5s;
+}
+
+.droppable:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 500ms;
+  transition-delay: 0.5s;
+}
+
+.mega-menu .dropDownColumn {
+  width: 30%;
+  display: inline-block;
+  padding: 1.5%;
+  text-transform: none;
+  vertical-align: top;
+}
+
+.mega-menu h2 {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.mega-menu h3 img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  margin-bottom: -4px;
+}
+
+.mega-menu .dropDownColumn ul li {
+  list-style: none;
+}
+
+h2 img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* ============================================================
+Responsive Styles
+============================================================ */
+
+/* Width Responsive */
+@media (max-width: 1484px) {
+  #mainHeader h1 {
+    font-size: 2.5em;
+    top: 17px;
+  }
+}
+
+@media (max-width: 1360px) {
+  #mainHeader h1 {
+    font-size: 2em;
+    top: 17px;
+  }
+}
+
+@media (max-width: 1238px) {
+  #mainHeader h1 {
+    top: 10px;
+  }
+
+  #mainHeader aside {
+    top: 65px;
+    left: 71px;
+    right: auto;
+  }
+
+  /*#mainHeader .sociallinks,#mainHeader #search-box .search-input, #mainHeader #search-box .search-submit {top:24px;}*/
+  #mainHeader .contactinfo {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  #mainHeader h1 {
+    top: 10px;
+  }
+
+  #mainHeader aside {
+    top: 65px;
+    left: 71px;
+    right: auto;
+  }
+
+  /*#mainHeader .sociallinks,#mainHeader #search-box .search-input, #mainHeader #search-box .search-submit {top:24px;}*/
+  #mainHeader .contactinfo {
+    display: none;
+  }
+}
+
+@media (max-width: 886px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  #mainMenu {
+    height: 25px;
+  }
+
+  #mainMenu {
+    top: 143px;
+  }
+
+  #mainMenu .mobileMenu {
+    display: block;
+    color: #fff;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  #reveal-menu[type="checkbox"]:checked~.mobile-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 750px) {
+  #mainHeader h1 {
+    font-size: 1.5em;
+  }
+
+  #mainHeader .sociallinks {
+    display: none;
+  }
+
+  #mainHeader aside {
+    left: -88px;
+  }
+}
+
+@media (max-width: 600px) {
+  #mainHeader h1 {
+    position: relative;
+    width: calc(100% - 132px);
+    left: -30px;
+    top: -15px;
+    float: right;
+  }
+
+  #mainHeader aside {
+    position: relative;
+    top: -4px;
+    left: -30px;
+    right: 0;
+    width: calc(100% - 132px);
+    float: right;
+    margin-top: -40px;
+  }
+
+  #cludo-search-form {
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+
+  #mainHeader .sociallinks {
+    top: 0;
+  }
+
+  #mainHeader #cludo-search-form .search-input,
+  #mainHeader #cludo-search-form .search-submit {
+    top: 20px;
+  }
+
+  #mainHeader #cludo-search-form .search-input {
+    width: calc(100% - 35px);
+    left: 0px;
+  }
+
+  #mainHeader #cludo-search-form .search-submit {
+    right: 0px;
+  }
+}
+
+@media (max-width: 585px) {
+  #mainHeader {
+    padding-right: 0;
+  }
+
+  #mainHeader h1 {
+    font-size: 1.5em;
+    top: -10px;
+  }
+}
+
+@media (max-width: 465px) {
+  #mainHeader h1 {
+    font-size: 1.25em;
+    top: -10px;
+  }
+
+  /*
+	#mainHeader h1 {font-size: 1.25em;width: calc(100% - 105px);top:0;}
+	#mainHeader #siteLogo {width: 90px;margin-top: 0;}
+	#mainHeader aside {
+		width: calc(100% - 105px);
+		margin-top: -53px;
+	}
+	#mainMenu {
+		width: 100%;
+		margin-left: 0;
+
+	}
+	#mainMenu .mobileMenu {
+		text-align: center;
+	}
+	*/
+}
+
+@media (max-width: 415px) {
+  #mainHeader #siteLogo {
+    width: 60px;
+    margin-top: 0px;
+  }
+
+  #mainHeader #cludo-search-form .search-input {
+    left: -33px;
+    width: 100%;
+  }
+
+  #mainHeader h1 {
+    width: 74%;
+  }
+
+  /*
+	#mainHeader h1 {
+		font-size: 1.25em;
+		width: 74%;
+		top: -10px;
+		left: -30px;
+	}
+	#mainHeader aside {
+		width: calc(100% - 70px);
+		margin-top: 0;
+		left: -10px;
+	}
+	#mainSidebar {
+		width: 89%;
+	}
+	#mainHeader #siteLogo {width: 60px;}
+	#mainHeader aside {
+		width: calc(100% - 60px);
+		margin-top: -30px;
+	}
+	#mainHeader h1 {font-size: 1em;width: calc(100% - 60px);}
+	*/
+}
+
+@media (max-width: 375px) {
+  #mainHeader #siteLogo {
+    width: 50px;
+  }
+
+  #mainHeader h1 {
+    font-size: 1.04em;
+    top: -2px;
+  }
+
+  #pcsdBranding h1 {
+    font-size: 15px;
+  }
+}
+
+/* Height Responsive */
+@media (max-height: 1066px) {
+  .mega-menu .dropDownColumn {
+    width: 30%;
+    padding: 1%;
+  }
+
+  .mega-menu .dropDownColumn ul {
+    margin-left: 30px;
+  }
+
+  .mega-menu .dropDownColumn ul li {
+    margin-left: 0;
+  }
+}
+
+@media (max-height: 780px) {
+  .dropDownColumn ul li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+/*
+================================================================================================================
+BreadCrumbs
+================================================================================================================
+*/
+#breadcrumbs {
+  font-size: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+  list-style: none;
+  overflow: hidden;
+}
+
+#breadcrumbs li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+}
+
+#breadcrumbs a {
+  color: #fff;
+}
+
+/*
+================================================================================================================
+Front Page Alert
+================================================================================================================
+*/
+#alerts {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+  position: relative;
+}
+
+#alerts h2 a {
+  color: #fff;
+}
+
+#alerts #closeAlert {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+}
+
+/*
+================================================================================================================
+Slider
+================================================================================================================
+*/
+#announcments {
+  background-color: #fff;
+}
+
+#announcments h1 {
+  position: absolute;
+  left: -9999px;
+}
+
+.slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+  height: 500px;
+}
+
+.slide .slide-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #ccd5df;
+  background-color: rgba(225, 233, 244, 0.9);
+  padding: 5px 5px 10px 15px;
+}
+
+/*
+================================================================================================================
+page layouts
+================================================================================================================
+*/
+.fwContent {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-top: 5px;
+  padding: 1em;
+}
+
+/*
+================================================================================================================
+Post List
+================================================================================================================
+*/
+.postgrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postgrid>h1 {
+  padding-left: 5%;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.postgrid .post {
+  width: 27.33%;
+  padding: 20px 3%;
+}
+
+.postmeta {
+  max-width: 100%;
+}
+
+#mainContent .post .postmeta h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.postmeta ul {
+  margin: 0;
+  max-width: 100%;
+}
+
+.postmeta ul li {
+  display: inline;
+  margin: 0;
+  list-style: none;
+  font-size: 0.8em;
+  margin-right: 2px;
+}
+
+.postmeta ul li img {
+  width: 10px;
+  margin-bottom: 0;
+  margin-right: 5px;
+  margin-left: 2px;
+}
+
+.postgrid .post .featured-image {
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.postgrid .post .featured-image img {
+  margin: 0 auto;
+  margin-top: -50%;
+  display: block;
+  width: 100%;
+}
+
+div.featured-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.postgrid .post p {
+  margin-top: 0;
+}
+
+.postgrid .archiveNav {
+  clear: both;
+  width: 100%;
+  text-align: right;
+  padding: 0;
+}
+
+#mainContent .archiveNav .page-numbers:first-child {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#mainContent .archiveNav .page-numbers:last-child {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#mainContent .archiveNav .page-numbers {
+  padding: 5px 10px;
+  background-image: linear-gradient(to bottom, #fff 0, #e0e0e0 100%);
+  background-repeat: repeat-x;
+  border: solid 1px #ccc;
+  text-shadow: 0 1px 0 #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(0, 0, 0, 0.075);
+  display: inline-block;
+  margin: 0 0 0 -5px;
+}
+
+#mainContent .archiveNav .current {
+  padding-top: 6px;
+  padding-bottom: 4px;
+  font-size: 15px;
+}
+
+.featured-image-full {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1000px;
+  padding-top: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.translationdescriptor {
+  margin-top: 40px;
+}
+
+@media (min-width: 1400px) {
+  .featured-image-full {
+    padding-top: 0;
+    height: 500px;
+  }
+}
+
+/*
+================================================================================================================
+News Slider With Tiles
+================================================================================================================
+*/
+.tile-page .currentContent {
+  background-color: #fff;
+  width: 46%;
+  height: 400px;
+  padding: 0 2%;
+  display: inline-block;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.no-slider .currentContent,
+.currentContent.no-slider {
+  width: 96%;
+  height: auto;
+}
+
+.tile-page .slider {
+  width: 50%;
+  float: right;
+}
+
+.tile-page .square2Image {
+  width: 50%;
+  float: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 400px;
+}
+
+.tile-page .slider .slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 400px;
+}
+
+.tile-page .slider .slide span {
+  display: block;
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 10px;
+  height: auto;
+  /* changed from 125px to auto so that the slider span was only as big as it needed to be 11-16-17*/
+  background-color: #ccd5df;
+  background-color: rgba(204, 213, 223, 0.9);
+}
+
+.tile-page .slider .slide span h2,
+.tile-page .slider .slide span p {
+  max-width: 97%;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin: 5px 0;
+}
+
+.tile-page .square2Image span {
+  display: block;
+  padding: 10px;
+  max-width: 100%;
+  margin-top: 200px;
+  background-color: #ccd5df;
+  background-color: rgba(204, 213, 223, 0.9);
+}
+
+.tile-page .square2Image span:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.tile-page .square2Image span img {
+  float: left;
+  margin: 10px 15px 0;
+  width: 60px;
+}
+
+.tile-page .square2Image span .slidertext {
+  float: left;
+  width: 80%;
+}
+
+.tile-page .square2Image span h2,
+.tile-page .square2Image span p {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  clear: none;
+}
+
+.tile-page .tiles {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -8px;
+}
+
+.currentContent .content-featured-image {
+  width: calc(100% - 35px);
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  bottom: 10px;
+  left: 10px;
+}
+
+.currentContent .content-featured-image img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(200px - 75%);
+  margin-left: -50%;
+}
+
+/*
+--------------------------------------------------------------------
+Tile styles
+--------------------------------------------------------------------
+*/
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tiles .tile {
+  width: 27.33%;
+  padding: 20px 3%;
+}
+
+@media (max-width: 1054px) {
+
+  .postgrid .post,
+  .tiles .tile {
+    width: 44%;
+  }
+
+  .tile-page .currentContent {
+    width: 100%;
+  }
+
+  .tile-page .slider {
+    width: 100%;
+  }
+}
+
+@media (max-width: 840px) {
+
+  .postgrid .post,
+  .tiles .tile {
+    width: 94%;
+  }
+}
+
+/*
+================================================================================================================
+Pages, Single Posts
+================================================================================================================
+*/
+.lastmodified {
+  float: right;
+  font-size: 14px;
+}
+
+.single-post,
+.single-page {
+  padding: 10px 20px 20px 20px;
+}
+
+.single-post h2,
+.single-post h3,
+.single-post h4 {
+  clear: none;
+}
+
+.single-page h2,
+.single-page h3,
+.single-page h4 {
+  clear: both;
+}
+
+/*
+--------------------------------------------------------------------
+Cludo Search
+--------------------------------------------------------------------
+*/
+.powered-by-cludo {
+  display: none !important;
+}
+
+#search_autocomplete {
+  background-color: #eee;
+  position: absolute;
+  right: 55px;
+  top: 28px;
+  width: 400px;
+  z-index: 200;
+  box-shadow: 0 10px 7px -5px black;
+}
+
+#search_autocomplete li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 10px;
+}
+
+#search_autocomplete li:hover,
+#search_autocomplete li:active,
+#search_autocomplete li:focus,
+#search_autocomplete li:focus-within {
+  background-color: #ccc;
+}
+
+@media (max-width: 1100px) {
+  #cludo-search-results .with-images li .search-result-image {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  #cludo-search-results .with-images li .search-result-image+.search-result-data {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 617px) {
+  #search_autocomplete {
+    display: none;
+  }
+}
+
+/*
+--------------------------------------------------------------------
+404 styles
+--------------------------------------------------------------------
+*/
+#cludo-404 {
+  width: 40%;
+  margin: 0 !important;
+}
+
+#cludo-404 h3 {
+  text-transform: none !important;
+}
+
+#cludo-404 .cludo-result-item {
+  font-size: 12px;
+}
+
+#cludo-404 .cludo-result-item-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#image404 {
+  width: 25%;
+  position: absolute;
+  right: 15px;
+}
+
+/*--------------------------------------------------------------------
+featured Gallery styles
+--------------------------------------------------------------------*/
+.featured-gallery {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #ccc;
+  margin-bottom: 15px;
+  height: auto;
+}
+
+.featured-for {
+  width: auto;
+  height: auto;
+  max-width: 1000px;
+}
+
+.featured-for img {
+  width: auto !important;
+  max-height: 500px;
+  margin: 0 auto;
+  display: block !important;
+}
+
+.featured-nav {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.featured-nav img {
+  border: 2px solid #000;
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+  max-height: 100px;
+  max-width: 200px;
+  display: inline-block;
+}
+
+.featured-nav .slick-center {
+  border: 2px solid #e16c16;
+}
+
+/*
+================================================================================================================
+Sidebar
+================================================================================================================
+*/
+#mainSidebar h1 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#mainSidebar h2 {
+  background-color: #fff;
+  padding: 5px 0 5px 5px;
+}
+
+#mainSidebar .postmeta h2 {
+  background-color: transparent;
+  color: #fff;
+}
+
+#mainSidebar section {
+  margin-bottom: 70px;
+}
+
+#mainSidebar a {
+  color: #fff;
+}
+
+#mainSidebar a:hover,
+.imagelist li a:hover span {
+  color: #fc7e02;
+}
+
+#mainSidebar .post .postmeta h1 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+#mainSidebar .post .postmeta ul {
+  position: absolute;
+  right: 55px;
+  margin-top: -5px;
+}
+
+#mainSidebar .post .postmeta ul li {
+  font-size: 0.8em;
+}
+
+#mainSidebar .post p {
+  margin-top: 10px;
+}
+
+#mainSidebar .post .readmore {
+  margin: 0;
+  text-align: right;
+}
+
+#mainSidebar .imagelist {
+  list-style: none;
+  margin-left: 0;
+}
+
+#mainSidebar ul li {
+  font-size: 1em;
+  margin-left: 0;
+}
+
+.imagelist {
+  margin-left: 0;
+  list-style: none;
+}
+
+.imagelist li img {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.imagelist li span {
+  padding-top: 5px;
+}
+
+.calendar-agenda a {
+  float: right;
+  margin-top: 20px;
+}
+
+#mainSidebar .simcal-default-calendar-list .simcal-event-details p {
+  margin: 0 0 0 !important;
+}
+
+#mainSidebar .simcal-default-calendar-list .simcal-event-details br {
+  display: block;
+  margin: 0;
+}
+
+.imagelist li a {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+/*
+================================================================================================================
+Footer
+================================================================================================================
+*/
+#teacherAccess {
+  position: absolute;
+  z-index: 1;
+  margin-top: -38px;
+  border-radius: 3px;
+  padding: 0 20px 0 0px;
+}
+
+#teacherAccess .teacherActivate {
+  font-size: 1.2em;
+  padding: 10px 0 10px 10px;
+}
+
+#teacherAccess a {
+  color: #fff;
+  grid-template-columns: 15% 90%;
+}
+
+#teacherAccess ul {
+  display: none;
+}
+
+#teacherAccess ul li {
+  font-size: 0.9em;
+}
+
+#teacherAccess ul li a:hover {
+  color: #fc7e02;
+}
+
+#mainFooter p {
+  margin: 15px 15px 15px 0;
+}
+
+#teacherAccess .employeelink {
+  background-color: #dce3e8;
+  margin-right: -20px;
+  margin-left: 0;
+  padding: 5px 15px 5px 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#teacherAccess .employeelink a {
+  grid-template-columns: 10% 90%;
+  color: #02224f;
+  gap: 5%;
+}
+
+#teacherAccess .employeelink a img {
+  height: auto;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+
+
+/*
+================================================================================================================
+Directory styles
+================================================================================================================
+*/
+.staff-member-listing {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.staff-member-listing .personalvCard {
+  width: 16%;
+  padding: 20px 2%;
+  position: relative;
+}
+
+.staff-member-listing .personalvCard img {
+  margin: 0 auto;
+  display: block;
+  float: none;
+  height: 150px;
+}
+
+.staff-member-listing .personalvCard ul {
+  margin-left: 0;
+}
+
+.staff-member-listing .personalvCard ul li {
+  list-style: none;
+  margin: 5px 0 5px 0;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.staff-member-listing .personalvCard .title {
+  font-style: italic;
+  line-height: 15px;
+}
+
+.staff-member-listing .personalvCard .name {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#mainSidebar #sidebar-filter {
+  display: inline;
+  margin-top: 20px;
+  width: 75%;
+}
+
+#mainSidebar .directorySearchIcon {
+  width: 21px;
+  height: 21px;
+  margin-bottom: -5px;
+}
+
+@media (max-width: 1100px) {
+  .staff-member-listing .personalvCard {
+    width: 21%;
+  }
+}
+
+@media (max-width: 960px) {
+  .staff-member-listing .personalvCard {
+    width: 29%;
+  }
+}
+
+@media (max-width: 822px) {
+  .staff-member-listing .personalvCard {
+    width: 46%;
+  }
+}
+
+@media (max-width: 740px) {
+  .staff-member-listing .personalvCard {
+    width: 29%;
+  }
+}
+
+@media (max-width: 484px) {
+  .staff-member-listing .personalvCard {
+    width: 46%;
+  }
+}
+
+/*
+================================================================================================================
+link marking
+================================================================================================================
+*/
+/*For adding hidden into for listed links*/
+#mainContent ul li a:after {
+  content: " - External Link";
+  position: absolute;
+  left: -9999px;
+}
+
+#mainContent ul li a[href*="provo.edu"]:after {
+  content: " - Internal Link";
+  position: absolute;
+  left: -9999px;
+}
+
+#mainContent ul li a[href*="pdf"]:after {
+  content: " - PDF Document";
+  position: absolute;
+  left: -9999px;
+}
+
+#mainContent ul li a[href*="xls"]:after {
+  content: " - XLS Document";
+  position: absolute;
+  left: -9999px;
+}
+
+/*For adding hidden into for in line links*/
+#mainContent p a:before {
+  content: "External Link - ";
+  position: absolute;
+  left: -9999px;
+}
+
+#mainContent p a[href*="provo.edu"]:before {
+  content: "Internal Link - ";
+  position: absolute;
+  left: -9999px;
+}
+
+#mainContent p a[href*="pdf"]:before {
+  content: "PDF Document - ";
+  position: absolute;
+  left: -9999px;
+}
+
+#mainContent p a[href*="xls"]:before {
+  content: "XLS Document - ";
+  position: absolute;
+  left: -9999px;
+}
+
+/*For adding icon into for in line links*/
+#mainContent p a:not(.jumper):not(img):after {
+  content: " ";
+  display: inline-block;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 0.7em;
+  height: 0.7em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../pcsd-2019-theme/assets/icons/external-link-gray.svg);
+}
+
+#mainContent p a[href*="provo.edu"]:not(.jumper):not(img):after {
+  display: inline-block;
+  background-image: url(../pcsd-2019-theme/assets/icons/file-blue.svg);
+}
+
+#mainContent p a[href*="pdf"]:not(.jumper):not(img):after {
+  content: " (PDF) ";
+  display: inline;
+  background-image: none;
+}
+
+#mainContent p a[href*="xls"]:not(.jumper):not(img):after {
+  content: " (XLS) ";
+  background-image: none;
+  display: inline;
+}
+/* these are so that the listed links have a the right icon once the javascript gives them a class*/
+ul li.int {
+  list-style-image: url(../pcsd-2019-theme/assets/icons/file-blue.png) !important;
+}
+
+ul li.pdf {
+  list-style-image: url(../pcsd-2019-theme/assets/icons/pdf.png) !important;
+}
+
+ul li.xls {
+  list-style-image: url(../pcsd-2019-theme/assets/icons/xls.png) !important;
+}
+
+ul li.ext {
+  list-style-image: url(../pcsd-2019-theme/assets/icons/external-blue.png) !important;
+}
+
+/*
+================================================================================================================
+accordion styles
+================================================================================================================
+*/
+.accordion {
+  list-style: none;
+  margin-left: 0;
+}
+
+.accordion>li>a:before {
+  display: inline-block;
+  content: " ";
+  background-image: url("../pcsd-2019-theme/assets/icons/accordion-down.svg");
+  background-size: 14px 14px;
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+}
+
+.accordion>li.active>a:before {
+  background-image: url("../pcsd-2019-theme/assets/icons/accordion-up.svg");
+}
+
+.accordion>li li>a:before {
+  content: none;
+}
+
+.accordion li .accordion-content {
+  display: none;
+}
+
+.accordion li.active .accordion-content {
+  display: block;
+  transition: all 0.35s;
+}
+
+/*
+================================================================================================================
+Classroom Links Styles
+================================================================================================================
+*/
+#contentArea.classroom-links .page-Content {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#contentArea.classroom-links .slide {
+  height: 370px;
+}
+
+#contentArea.classroom-links .teacher-archive-news {
+  text-align: center;
+  background-color: var(--secondary-color);
+  height: 23px;
+  padding-top: 4px;
+}
+
+#contentArea.classroom-links {
+  width: 100%;
+}
+
+.classroom-links .flexlinks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.classroom-links .flexlinks .post {
+  width: 14%;
+  padding-left: 0.14%;
+  padding-right: 0.14%;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.tiles .tile .flexlinks .post {
+  width: 29%;
+  padding: 2%;
+}
+
+.classroom-links .flexlinks .post:nth-child(even) {
+  background-color: var(--even-tile-bg-color);
+}
+
+.classroom-links .flexlinks .post:nth-child(odd) {
+  background-color: var(--odd-tile-bg-color);
+}
+
+#mainContent .flexlinks .post img {
+  width: 100px;
+}
+
+#mainContent .tile .flexlinks .post img {
+  width: 60px;
+}
+
+.classroom-links .linkTitle {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+.classroom-links ul {
+  margin-left: 0;
+}
+
+.classroom-links ul li {
+  list-style-position: inside;
+  margin-left: 0;
+}
+
+@media (max-width: 1250px) {
+  .classroom-links .flexlinks .post {
+    width: 19.7%;
+  }
+}
+
+@media (max-width: 940px) {
+  .classroom-links .flexlinks .post {
+    width: 33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .classroom-links .flexlinks .post {
+    width: 33%;
+  }
+}
+
+@media (max-width: 600px) {
+  .classroom-links .flexlinks .post {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .tiles .tile .flexlinks .post {
+    width: 97%;
+  }
+}
+
+/*
+================================================================================================================
+Wordpress Gallery Styles
+================================================================================================================
+*/
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery .gallery-item {
+  overflow: hidden;
+  margin: 0 1% 0 1%;
+  max-width: 18%;
+  max-height: 200px;
+}
+
+.gallery .gallery-item img {
+  border: none !important;
+  width: 600px;
+  height: 400px;
+  object-fit: none;
+  margin-top: -30%;
+}
+
+/*
+--------------------------------------------------------------------
+Gallery Page template styles
+--------------------------------------------------------------------
+*/
+.gallery-page .page-gallery-selection {
+  width: 20%;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 5px 10px 5px;
+  border: 2px solid #fff;
+}
+
+.gallery-page .slick-center {
+  border: 2px solid #e16c16;
+}
+
+/*
+===============================================================================================================
+low height viewport
+================================================================================================================
+*/
+/* @media (max-height: 720px) and (max-width: 600px){ */
+@media (max-height: 720px) {
+  #contentArea {
+    position: static;
+    float: left;
+    margin-top: 160px;
+  }
+
+  #mainSidebar {
+    position: static;
+    float: right;
+    margin-top: 166px;
+  }
+
+  #mainFooter {
+    position: static;
+    clear: both;
+    padding-top: 5px;
+    /* height: auto; */
+  }
+}
+
+@media (max-height: 544px) {
+  #pcsdBranding {
+    position: static;
+  }
+
+  #pcsdBranding h1 {
+    margin-top: 7px;
+    left: 100px;
+    position: absolute;
+    display: block;
+  }
+
+  #mainHeader {
+    position: relative;
+    top: 0;
+    height: 80px;
+  }
+
+  #mainMenu {
+    position: absolute;
+    top: 100px !important;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  #mainMenu .mobileMenu {
+    display: block;
+    color: #fff;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  #reveal-menu[type=checkbox]:checked~.mobile-menu {
+    display: block;
+  }
+
+  #contentArea {
+    margin-top: 18px;
+  }
+
+  .mobile-menu {
+    z-index: 3000;
+    position: absolute;
+    width: 100vw;
+  }
+
+  #mainSidebar {
+    margin-top: 18px;
+  }
+
+}
+
+/*================================================================================================================
+ skip link styling
+ ================================================================================================================*/
+a.skip-to-menu,
+a.skip-to-content,
+a.skip-translation-link {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+a.skip-to-menu:focus,
+a.skip-to-menu:active,
+a.skip-to-content:focus,
+a.skip-to-content:active,
+a.skip-translation-link:active,
+a.skip-translation-link:focus {
+  color: #fff;
+  background-color: #000;
+  left: auto;
+  top: auto;
+  width: 20%;
+  height: auto;
+  overflow: auto;
+  margin: 10px 35%;
+  padding: 5px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 9999;
+}
+
+
+
+
+/*
+=====================================================
+Shortcode Grid Styling
+=====================================================
+*/
+.grid2 {
+  display: grid;
+}
+@media (min-width: 700px){
+  .grid2{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+
+
+/*
+================================================================================================================
+Blockquote
+================================================================================================================
+*/
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+  font-style: italic;
+}
+
+
+
+
+/*
+=====================================================
+Print Styles
+=====================================================
+*/
+
+@media print {
+  /* * {
+   margin:0;
+   padding:0;
+   display: block;
+  } */
+  script,head,#pcsdBranding,#mainHeader,#mainSidebar,#mainFooter,#breadcrumbs,.lastmodified{display: none;}
+  .fwContent{padding-left:unset;}
+  .fwContent > ul {display: none;;}
+  #contentArea{position: revert;width:100%;top:0;margin-top: 0!important;}
+
+  table tr { page-break-before: avoid; }
+}
+
+/* Work order 103281
+Rob Requested the position of the edit link be moved. 
+=========================================================================================*/
+#mainSidebar .simcal-calendar {
+  padding: .5em;
+}
+.calendar-agenda a {
+  float:unset;
+}

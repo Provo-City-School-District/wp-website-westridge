@@ -1,0 +1,388 @@
+/*
+ Theme Name:   Westridge Elem Child (PCSD 2019 Theme)
+ Theme URI:    https://westridge.provo.edu/
+ Description:  Westridge Child theme of the Provo School District 2018 Theme
+ Author:       Josh Espinoza, Rob Francom, Shauna Sprunger
+ Author URI:   https://tech.provo.edu
+ Template:     pcsd-2019-theme
+ Version:      1.0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  westridge-child
+
+ Color Pallet
+ Primary -  blue - #27305b
+ Secondary - yellow - #d6af2f
+ Accent Color - Whtie - #ffffff
+ 
+/*================================================================================================================
+Variables
+================================================================================================================*/
+
+:root {
+  --even-tile-bg-color: #e1e9f4;
+  --odd-tile-bg-color: #cddbee;
+  --primary-color: #27305b;
+  --secondary-color: #d6af2f;
+  --accent-color: #ffffff;
+}
+
+/*================================================================================================================
+Theme specific coloring
+================================================================================================================*/
+#mainSidebar, #mainFooter {
+	background-color: #27305b;
+}
+#contentArea {background-color: #d6af2f;}
+a {text-decoration: none;color:#45579c;}
+a:hover {color:#fc7e02;}
+#mainHeader #cludo-search-form .search-submit {background-color: #d6af2f;}
+/*================================================================================================================
+Fonts
+================================================================================================================*/
+body{font-family: Arial;color: #02224f;}
+/*================================================================================================================
+Overall Structeral  Styles
+================================================================================================================*/
+@media (max-height: 720px) {
+	body {
+		background-color: #d6af2f;
+	}
+}
+
+/*==================================================
+Heading Styles
+====================================================*/
+h1,h2,h3,h4 {
+	font-family: 'Roboto', sans-serif;
+	color: #02224f;
+	line-height: 1.05em;
+}
+#mainContent h1 {margin-top: 10px;margin-bottom: 10px;}
+#mainContent h2,#mainContent h3,#mainContent h4 {margin-top: 30px;margin-bottom: 20px;}
+h1{font-size: 3em;font-weight: 900;}
+h2{font-size: 2em;}
+h3{font-size: 1.5em;}
+ul li ~ h3 {list-style: none;}
+
+/*================================================================================================================
+header styles
+================================================================================================================*/
+#mainHeader {
+    background-image: url('assets/images/header-texture.png');
+    background-repeat: no-repeat;
+    background-color: #27305b;
+     background-size: cover;
+ }
+#mainHeader h1 {
+	position: absolute;
+	left: 127px;
+	top: 16px;
+	color: #fff;
+	font-weight: 900;
+}
+#mainHeader #siteLogo {
+	width: 90px;
+	margin-top: -12px;
+	margin-left: -14px;
+}
+#mainSidebar h1 {
+	font-size: 2em;
+	color: #fff;
+}
+#mainHeader .contactinfo {
+	color: #fff;
+}
+#mainHeader .contactinfo li span.phone, #mainHeader .contactinfo li span.fax {
+	margin-left: 10px;
+}
+@media (max-width: 1360px) {
+	#mainHeader h1 {font-size: 2.5em;top: 17px;}
+}
+@media (max-width: 1270px) {
+	#mainHeader h1 {font-size: 2em;top:17px;}
+}
+@media (max-width: 1184px) {
+	#mainHeader h1 {top: 10px;}
+	#mainHeader aside {top:65px;left: 71px;right: auto;}
+	/*#mainHeader .sociallinks,#mainHeader #search-box .search-input, #mainHeader #search-box .search-submit {top:24px;}*/
+	#mainHeader .contactinfo {display:none;}
+}
+@media (max-width: 750px) {
+	#mainHeader .sociallinks {display: none;}
+	#mainHeader aside {left: -88px;}
+}
+@media (max-width: 600px) {
+	#mainHeader h1 {
+		position: relative;
+		width: calc(100% - 132px);
+		left: -30px;
+		top: -15px;
+		float: right;
+	}
+	#mainHeader aside {
+		position: relative;
+		top: -4px;
+		left: -30px;
+		right: 0;
+		width: calc(100% - 132px);
+		float: right;
+		margin-top: -40px;
+	}
+	#cludo-search-form {width:100%;position:relative;display:block;}
+	#mainHeader .sociallinks,#mainHeader #cludo-search-form .search-input, #mainHeader #cludo-search-form .search-submit {
+		top:0;
+	}
+	#mainHeader #cludo-search-form .search-input {
+		width: calc(100% - 35px);
+		left: 0px;
+	}
+	#mainHeader #cludo-search-form .search-submit {
+		right: 0px;
+	}
+}
+@media (max-width: 585px) {
+	#mainHeader {padding-right: 0;}
+	#mainHeader h1 {font-size: 1.5em;top: -10px;}
+}
+@media (max-width: 465px) {
+	#mainHeader h1 {font-size: 1.25em;top: -10px;}
+
+	/*
+	#mainHeader h1 {font-size: 1.25em;width: calc(100% - 105px);top:0;}
+	#mainHeader #siteLogo {width: 90px;margin-top: 0;}
+	#mainHeader aside {
+		width: calc(100% - 105px);
+		margin-top: -53px;
+	}
+	#mainMenu {
+		width: 100%;
+		margin-left: 0;
+
+	}
+	#mainMenu .mobileMenu {
+		text-align: center;
+	}
+	*/
+}
+@media (max-width: 415px) {
+	#mainHeader #siteLogo {width: 60px;margin-top: 0px;}
+	#mainHeader #cludo-search-form .search-input {left:-33px;width: 100%;}
+	#mainHeader #cludo-search-form .search-input, #mainHeader #cludo-search-form .search-submit {top: 15px;}
+	#mainHeader h1 {width: 74%}
+
+	/*
+	#mainHeader h1 {
+		font-size: 1.25em;
+		width: 74%;
+		top: -10px;
+		left: -30px;
+	}
+	#mainHeader aside {
+		width: calc(100% - 70px);
+		margin-top: 0;
+		left: -10px;
+	}
+	#mainSidebar {
+		width: 89%;
+	}
+	#mainHeader #siteLogo {width: 60px;}
+	#mainHeader aside {
+		width: calc(100% - 60px);
+		margin-top: -30px;
+	}
+	#mainHeader h1 {font-size: 1em;width: calc(100% - 60px);}
+	*/
+}
+@media (max-width: 375px) {
+	#mainHeader #siteLogo {width: 50px;}
+	#mainHeader h1 {font-size: 1.04em;top: -2px;}
+	#pcsdBranding h1 {font-size: 15px;}
+}
+/*================================================================================================================
+Main Menu
+================================================================================================================*/
+#mainMenu {background-color: #d6af2f;font-family: 'Arial Black', Arial;}
+#mainMenu > ul > li {
+	padding: 0 4.5%;
+}
+#mainMenu > ul > li > a {
+	color: #27305b;
+}
+#mainMenu > ul > li > a:hover {
+	color: #fff;
+}
+.mega-menu {
+	background: rgba(240,240,240, 0.97);
+	box-shadow: 1px 3px 5px #000;
+}
+/*==================================================
+list icon color adjustments
+====================================================*/
+#mainMenu ul li.intern, #mainMenu ul li.int {
+	list-style-image:url(../pcsd-2019-theme/assets/icons/file-blue.png)!important;
+}
+#mainSidebar ul li.intern, #mainSidebar ul li.int {
+	list-style-image:url(../pcsd-2019-theme/assets/icons/file-white.png)!important;
+}
+#mainMenu ul li.ext{
+	list-style-image:url(../pcsd-2019-theme/assets/icons/external-blue.png)!important;
+}
+#mainSidebar ul li.ext {
+	list-style-image:url(../pcsd-2019-theme/assets/icons/external-white.png)!important;
+}
+@media (max-width: 1570px) {
+	#mainMenu > ul > li {
+		padding: 0 4%;
+	}
+}
+@media (max-width: 1500px) {
+	#mainMenu > ul > li {
+		padding: 0 3%;
+	}
+}
+@media (max-width: 1375px) {
+	#mainMenu > ul > li {
+		padding: 0 2%;
+	}
+}
+@media (max-width: 1220px) {
+	#mainMenu > ul > li {padding: 0 1%;}
+	#mainMenu > ul > li:first-child {padding-left: 1%;}
+	.mega-menu {top: 192px;}
+}
+@media (max-width: 1030px) {
+	#mainMenu > ul > li {padding: 0 1%;}
+}
+@media (max-width: 934px) {
+	#mainMenu > ul > li:first-child {padding-left: 0;}
+	.desktop-menu {padding-left: 10px;}
+}
+@media (max-width: 886px) {
+	.desktop-menu {display: none;}
+	#mainMenu {top: 143px;}
+	#mainMenu .mobileMenu {display: block;color: #fff;margin-left: 10px;font-size: 16px;}
+	#reveal-menu[type=checkbox]:checked ~ .mobile-menu {display: block;}
+}
+/*================================================================================================================
+Content Area
+================================================================================================================*/
+/*@media (max-width: 1166px) {
+	#mainSidebar, #contentArea {
+		top: 192px;
+	}
+}*/
+@media (max-width: 885px) {
+	#mainSidebar, #contentArea {
+		top: 166px;
+	}
+}
+@media (max-width: 740px) {
+	#contentArea {
+		position: static;
+		margin-top: 166px;
+		width: 100%;
+	}
+	#mainSidebar {
+		position: static;
+		width: 94%;
+		padding: 10px 3%;
+		margin-bottom: 140px;
+	}
+}
+/*================================================================================================================
+Calendar plugin styling
+================================================================================================================*/
+#mainSidebar .simcal-calendar {
+	background-color: #fff;
+	border-radius: 3px;
+	color: #02224f;
+}
+#mainSidebar .simcal-calendar a {color:#45579c;}
+#mainSidebar .simcal-calendar a:hover {color:#fc7e02;}
+#mainSidebar .simcal-calendar .simcal-event-title {font-weight: bold;}
+#mainSidebar .simcal-calendar .simcal-current {display: none;}
+#mainSidebar .simcal-default-calendar-dark .simcal-nav-button {color: #02365b!important;}
+#mainSidebar .simcal-default-calendar-list dt.simcal-day-label > span {width: 94%;color: #fff!important;}
+#mainSidebar .simcal-default-calendar-list .simcal-event-details {border-bottom: 1px solid #02365b;}
+#mainSidebar .simcal-default-calendar-list .simcal-event-details .simcal-event-description {display: none;}
+/*#mainSidebar .simcal-default-calendar-list .simcal-event-details .simcal-event-start-date {display: none;} */
+.single-page .simcal-day-label {background-color: #02224f!important;}
+.single-page .simcal-present div {border: 1px solid #fc7e02!important; }
+.single-page .simcal-present .simcal-day-label {background-color: #fc7e02!important;}
+/*================================================================================================================
+Post grid
+================================================================================================================*/
+.searchResults .post:nth-child(even), .postgrid .post:nth-child(even), .staff-member-listing .personalvCard:nth-child(even) {
+	background-color:#e1e9f4;
+}
+.searchResults .post:nth-child(odd), .postgrid .post:nth-child(odd), .staff-member-listing .personalvCard:nth-child(odd) {
+	background-color:#cddbee;
+}
+/*================================================================================================================
+tile coloring
+================================================================================================================*/
+.tiles .tile:nth-child(even) {background-color:#e1e9f4;}
+.tiles .tile:nth-child(odd) {background-color:#cddbee;}
+
+
+/*@media (max-height: 680px) {
+	#mainHeader h1 {
+		top: 45px;
+	}
+	#mainHeader aside {
+		top: 60px;
+	}
+	#mainMenu {
+		margin-top: -25px;
+	}
+	.mega-menu {
+		z-index: 1000;
+	}
+}*/
+
+/*================================================================================================================
+Teacher access
+================================================================================================================*/
+#teacherAccess {
+	background-color: #27305b;
+	
+}
+ /*================================================================================================================
+ skip link styling
+ ================================================================================================================*/
+ a.skip-to-menu, a.skip-to-content {
+     left:-999px;
+     position:absolute;
+     top:auto;
+     width:1px;
+     height:1px;
+     overflow:hidden;
+     z-index:-999;
+ }
+ a.skip-to-menu:focus, a.skip-to-menu:active, a.skip-to-content:focus, a.skip-to-content:active {
+     color: #fff;
+     background-color:#000;
+     left: auto;
+     top: auto;
+     width: 20%;
+     height: auto;
+     overflow:auto;
+     margin: 10px 35%;
+     padding:5px;
+     border-radius: 15px;
+     text-align:center;
+     font-size:1.2em;
+     z-index:9999;
+ }
+ /*================================================================================================================
+  TranslatePress Menu
+  ================================================================================================================*/
+ #trp-floater-ls-current-language .trp-ls-disabled-language img {
+	 max-width: 25px;
+	 max-width: 25px;
+ }
+ 
+ .trp-language-switcher-container.trp-floater-ls-names.trp-top-right.trp-color-dark {
+	 min-width: 25px;
+ }
