@@ -29,6 +29,14 @@ services:
       WORDPRESS_DB_USER: $MYSQL_USER
       WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
       WORDPRESS_TABLE_PREFIX: wp_
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'JETPACK_SIGNATURE__HTTPS_PORT', 0 );
+        define( 'MEDIA_TRASH', true );
+        define('EMPTY_TRASH_DAYS', 30); 
+        define( 'PP_EDIT_EXCEPTIONS_ALLOW_ATTACHMENT_DELETION', true );
+        define('DISALLOW_FILE_EDIT', true);
+        define( 'WPCF7_ADMIN_READ_CAPABILITY', 'manage_options' );
+        define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'manage_options' );
     container_name: westridge_wp
     volumes:
       - ./wp-content:/var/www/html/wp-content
