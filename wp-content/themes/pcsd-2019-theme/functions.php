@@ -597,89 +597,7 @@ function cn_global_menu()
     // return '</div>';
 }
 add_shortcode('cn-menu', 'cn_global_menu');
-//Elementary Menu
-//[cn-ele-menu]
-function cn_ele_menu()
-{
-    $cnelemenuhandle = curl_init();
-    $cnelemenuurl = "https://globalassets.provo.edu/globalpages/childNutritionMenuEle.txt";
-    // Set the url
-    curl_setopt($cnelemenuhandle, CURLOPT_URL, $cnelemenuurl);
-    // Set the result output to be a string.
-    curl_setopt($cnelemenuhandle, CURLOPT_RETURNTRANSFER, true);
-    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
-    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
-    curl_setopt($cnelemenuhandle, CURLOPT_SSL_VERIFYPEER, false);
-    $cnelemenuoutput = curl_exec($cnelemenuhandle);
-    // close the curl connection
-    curl_close($cnelemenuhandle);
-    return $cnelemenuoutput;
-    // return '</div>';
-}
-add_shortcode('cn-ele-menu', 'cn_ele_menu');
-//Middle School Menu
-//[cn-mid-menu]
-function cn_mid_menu()
-{
-    $cnmidmenuhandle = curl_init();
-    $cnmidmenuurl = "https://globalassets.provo.edu/globalpages/childNutritionMenuMiddle.txt";
-    // Set the url
-    curl_setopt($cnmidmenuhandle, CURLOPT_URL, $cnmidmenuurl);
-    // Set the result output to be a string.
-    curl_setopt($cnmidmenuhandle, CURLOPT_RETURNTRANSFER, true);
-    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
-    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
-    curl_setopt($cnmidmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
-    $cnmidmenuoutput = curl_exec($cnmidmenuhandle);
-    // close the curl connection
-    curl_close($cnmidmenuhandle);
-    return $cnmidmenuoutput;
-    // return '</div>';
-}
-add_shortcode('cn-mid-menu', 'cn_mid_menu');
-//High School Menu
-//[cn-high-menu]
-function cn_high_menu()
-{
-    $cnhighmenuhandle = curl_init();
-    $cnhighmenuurl = "https://globalassets.provo.edu/globalpages/childNutritionMenuHigh.txt";
-    // Set the url
-    curl_setopt($cnhighmenuhandle, CURLOPT_URL, $cnhighmenuurl);
-    // Set the result output to be a string.
-    curl_setopt($cnhighmenuhandle, CURLOPT_RETURNTRANSFER, true);
-    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
-    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
-    curl_setopt($cnhighmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
-    $cnhighmenuoutput = curl_exec($cnhighmenuhandle);
-    // close the curl connection
-    curl_close($cnhighmenuhandle);
-    return $cnhighmenuoutput;
-    // return '</div>';
-}
-add_shortcode('cn-high-menu', 'cn_high_menu');
-//[cn-ihs-menu]
-function cn_ihs_menu()
-{
-    $cnihsmenuhandle = curl_init();
-    $cnihsmenuurl = "https://globalassets.provo.edu/globalpages/childNutritionMenuIHS.txt";
-    // Set the url
-    curl_setopt($cnihsmenuhandle, CURLOPT_URL, $cnihsmenuurl);
-    // Set the result output to be a string.
-    curl_setopt($cnihsmenuhandle, CURLOPT_RETURNTRANSFER, true);
-    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
-    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
-    curl_setopt($cnihsmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
-    $cnihsmenuoutput = curl_exec($cnihsmenuhandle);
-    // close the curl connection
-    curl_close($cnihsmenuhandle);
-    return $cnihsmenuoutput;
-    // return '</div>';
-}
-add_shortcode('cn-ihs-menu', 'cn_ihs_menu');
+
 //[cn-sidebar]
 function cn_global_sidebarmenu()
 {
@@ -938,14 +856,85 @@ function to_title_case($string)
 {
     /* Words that should be entirely lower-case */
     $articles_conjunctions_prepositions = array(
-        'an', 'the', 'but', 'or', 'nor', 'if', 'is', 'then', 'else', 'when', 'at', 'by', 'from', 'for', 'in', 'off', 'on', 'out', 'over', 'to', 'into', 'with', 'of', 'and',
+        'an',
+        'the',
+        'but',
+        'or',
+        'nor',
+        'if',
+        'is',
+        'then',
+        'else',
+        'when',
+        'at',
+        'by',
+        'from',
+        'for',
+        'in',
+        'off',
+        'on',
+        'out',
+        'over',
+        'to',
+        'into',
+        'with',
+        'of',
+        'and',
     );
     /* Words that should be entirely upper-case (need to be lower-case in this list!) */
     $acronyms_and_such = array(
-        'pcsd', 'cte', 'id', 'i.d.', 'vi', 'stem', 'ap', 's.t.e.m.', 's.t.e.a.m.', 'pta', 'p.t.a.', 's.t.a.r.', 'usda', 'pe', 'p.e.', 'byu', 'b.y.u.', 'uvu', 'u.v.u.', 'psd', 'act', 'ths', 'phs', 'ihs', 'cms', 'dms', 't.h.s.', 'p.h.s.', 'i.h.s.', 'c.m.s.', 'd.m.s.', 'scc', '(scc)', 'ksl', 'naep', 'fbla', 'deca', 'sep', 'd.c.', 'nyc', 'cdc', 'covid', 'covid19', 'covid-19'
+        'pcsd',
+        'cte',
+        'id',
+        'i.d.',
+        'vi',
+        'stem',
+        'ap',
+        's.t.e.m.',
+        's.t.e.a.m.',
+        'pta',
+        'p.t.a.',
+        's.t.a.r.',
+        'usda',
+        'pe',
+        'p.e.',
+        'byu',
+        'b.y.u.',
+        'uvu',
+        'u.v.u.',
+        'psd',
+        'act',
+        'ths',
+        'phs',
+        'ihs',
+        'cms',
+        'dms',
+        't.h.s.',
+        'p.h.s.',
+        'i.h.s.',
+        'c.m.s.',
+        'd.m.s.',
+        'scc',
+        '(scc)',
+        'ksl',
+        'naep',
+        'fbla',
+        'deca',
+        'sep',
+        'd.c.',
+        'nyc',
+        'cdc',
+        'covid',
+        'covid19',
+        'covid-19'
     );
     $article_title_exceptions = array(
-        'One-A' => 'one-a', 'One-B' => 'one-b', 'DeAnna' => 'deanna', 'SafeUT' => 'safeut', 'COVID-19' => 'covid-19', 'SplashLearn' => 'splashlearn'
+        'One-A' => 'one-a',
+        'One-B' => 'one-b',
+        'DeAnna' => 'deanna',
+        'SafeUT' => 'safeut',
+        'COVID-19' => 'covid-19',
+        'SplashLearn' => 'splashlearn'
     );
     if (get_field('title_capitalization_override') == 0) {
         /* split title string into array of words */
