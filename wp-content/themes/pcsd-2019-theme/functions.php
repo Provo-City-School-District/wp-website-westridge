@@ -1,5 +1,5 @@
 <?php
-$asset_version = '1.0.0';
+$asset_version = '1.0.1';
 /*==========================================================================================
 Add stylesheet to enqueue
 ============================================================================================*/
@@ -186,7 +186,7 @@ function pcsd_media_upload_tips()
 {
 ?>
     <h2>Your file will be processed by the server. This may take a few minutes depending on the size of the file.</h2>
-    <h3>Allowed File types: jpeg, mp3, mp4, pdf, mpeg, png</h3>
+    <h3>Allowed File types: jpeg, mp3, mp4, png</h3>
 <?php
 };
 /*==========================================================================================
@@ -207,8 +207,8 @@ function theme_allowed_mime_types($mime_types)
 {
     $mime_types = array(
         //document types
-        'pdf' => 'application/pdf',
-        'xls|xlsx' => 'application/excel',
+        // 'pdf' => 'application/pdf',
+        // 'xls|xlsx' => 'application/excel',
         //image types
         'jpg|jpeg' => 'image/jpeg',
         'png' => 'image/png',
