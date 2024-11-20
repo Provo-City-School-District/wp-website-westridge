@@ -12,6 +12,11 @@ services:
       MARIADB_ROOT_PASSWORD: $MARIADB_ROOT_PASSWORD
       MARIADB_DATABASE: wordpress
     container_name: westridge_db
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://localhost:514"
+        tag: "westridge_db"
   #Web
   westridge_wp:
     depends_on:
@@ -41,6 +46,11 @@ services:
     container_name: westridge_wp
     volumes:
       - ./wp-content:/var/www/html/wp-content
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://localhost:514"
+        tag: "westridge_wp"
   #PhpMyAdmin
   westridge_myadmin:
     image: phpmyadmin:latest
@@ -53,6 +63,11 @@ services:
       UPLOAD_LIMIT: 100M
     depends_on:
       - westridge_db
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://localhost:514"
+        tag: "westridge_myadmin"
 volumes:
   db_data:
   wp-content:
