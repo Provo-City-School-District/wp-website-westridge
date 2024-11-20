@@ -1,5 +1,5 @@
 <?php
-$asset_version = '1.0.2';
+$asset_version = '1.0.3';
 /*==========================================================================================
 Add stylesheet to enqueue
 ============================================================================================*/
@@ -205,8 +205,10 @@ https://www.sitepoint.com/mime-types-complete-list/
 add_filter('upload_mimes', 'theme_allowed_mime_types');
 function theme_allowed_mime_types($mime_types)
 {
-    // Default allowed MIME types for all users
     $mime_types = array(
+        //document types
+        // 'pdf' => 'application/pdf',
+        // 'xls|xlsx' => 'application/excel',
         //image types
         'jpg|jpeg' => 'image/jpeg',
         'png' => 'image/png',
@@ -214,15 +216,8 @@ function theme_allowed_mime_types($mime_types)
         'mp3' => 'audio/mpeg3',
         'mp4|m4v' => 'video/mpeg'
     );
-
-    // Additional MIME types for admin users
-    if (current_user_can('administrator')) {
-        $mime_types['pdf'] = 'application/pdf';
-    }
-
     return $mime_types;
 }
-/*===============
 /*==========================================================================================
 Editor Changes
 ============================================================================================*/

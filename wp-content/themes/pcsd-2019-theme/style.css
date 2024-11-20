@@ -71,15 +71,6 @@ iframe,
 }
 
 /*================================================================================================================
-typography
-================================================================================================================*/
-a:hover h1,
-a:hover h2,
-a:hover h3 {
-  color: #fc7e02;
-}
-
-/*================================================================================================================
 General Purpose Styles
 ================================================================================================================*/
 .hidden {
@@ -862,7 +853,6 @@ BreadCrumbs
   padding-left: 10px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #fff;
   list-style: none;
   overflow: hidden;
 }
@@ -871,10 +861,6 @@ BreadCrumbs
   display: inline-block;
   margin: 0 5px 0 0;
   vertical-align: middle;
-}
-
-#breadcrumbs a {
-  color: #fff;
 }
 
 /*
@@ -1406,6 +1392,10 @@ Sidebar
   margin-bottom: 25px;
 }
 
+#mainSidebar section {
+  margin-bottom: 70px;
+}
+
 #mainSidebar h2 {
   background-color: #fff;
   padding: 5px 0 5px 5px;
@@ -1413,20 +1403,7 @@ Sidebar
 
 #mainSidebar .postmeta h2 {
   background-color: transparent;
-  color: #fff;
-}
-
-#mainSidebar section {
-  margin-bottom: 70px;
-}
-
-#mainSidebar a {
-  color: #fff;
-}
-
-#mainSidebar a:hover,
-.imagelist li a:hover span {
-  color: #fc7e02;
+  /* color: #fff; */
 }
 
 #mainSidebar .post .postmeta h1 {
@@ -1528,10 +1505,6 @@ Footer
 
 #teacherAccess ul li {
   font-size: 0.9em;
-}
-
-#teacherAccess ul li a:hover {
-  color: #fc7e02;
 }
 
 #mainFooter p {
