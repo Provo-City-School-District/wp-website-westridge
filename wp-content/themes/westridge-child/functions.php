@@ -1,12 +1,11 @@
 <?php
-$app_version = '1.0.2';
+$app_version = '1.0.4';
 /*==========================================================================================
 Add stylesheets/javascripts to enqueue
 ============================================================================================*/
 function my_theme_enqueue_styles()
 {
 	global $app_version;
-	wp_enqueue_style('parent-theme', get_template_directory_uri() . '/style.css', '', $app_version, false);
 	wp_enqueue_script('child_scripts', get_theme_file_uri() . '/assets/js/child-scripts.js', '', $app_version, true);
 	wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', '', $app_version, false);
 }
