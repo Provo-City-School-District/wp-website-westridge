@@ -20,12 +20,12 @@ Variables
 ================================================================================================================*/
 
 :root {
-	--primary-color: #27305b;
-	--secondary-color: #d6af2f;
+	--primary-color: #28305B;
+	--secondary-color: #E0C05C;
 	--accent-color: #ffffff;
 	--content-text: #02224f;
 	--link-color: #45579c;
-	--link-hover-color: #fc7e02;
+	--link-hover-color: #3C300C;
 	--theme-white: #fff;
 	--theme-black: #000;
 	--theme-gray: #ccc;
@@ -52,6 +52,7 @@ a {
 
 a:hover {
 	color: var(--link-hover-color);
+	text-decoration: underline;
 }
 
 #mainHeader #cludo-search-form .search-submit {
@@ -438,7 +439,7 @@ sidebar Area
 
 #mainSidebar a:hover,
 .imagelist li a:hover span {
-	color: var(--link-hover-color);
+	color: var(--secondary-color);
 }
 
 /*================================================================================================================
