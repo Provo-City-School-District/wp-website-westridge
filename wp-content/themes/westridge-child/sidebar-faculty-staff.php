@@ -7,7 +7,6 @@
 	<section>
 		<h1>Faculty &amp; Staff</h1>
 		<?php
-		//echo do_shortcode( '[facultyMenu]' ); 
 		$faculty_Menu = get_post(70);
 		echo $faculty_Menu->post_content;
 		?>
