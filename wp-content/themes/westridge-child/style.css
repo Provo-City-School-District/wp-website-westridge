@@ -31,6 +31,7 @@ Variables
 	--theme-gray: #ccc;
 	--even-tile-bg-color: #e1e9f4;
 	--odd-tile-bg-color: #cddbee;
+	--mega-menu-hover: var(--link-hover-color);
 }
 
 /*================================================================================================================
@@ -311,6 +312,10 @@ Main Menu
 .mega-menu {
 	background: rgba(240, 240, 240, 0.97);
 	box-shadow: 1px 3px 5px #000;
+}
+
+.mega-menu a:hover {
+	color: var(--mega-menu-hover);
 }
 
 /*==================================================
