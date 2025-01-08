@@ -216,7 +216,7 @@ function theme_allowed_mime_types($mime_types)
     );
 
     // Additional MIME types for admin users
-    if (current_user_can('administrator')) {
+    if (current_user_can('editor') || current_user_can('administrator')) {
         $mime_types['pdf'] = 'application/pdf';
     }
 
