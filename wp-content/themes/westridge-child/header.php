@@ -19,7 +19,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title><?php if (is_home()) { ?>News | <?php } ?><?php if (is_page()) {
 															the_title(); ?> | <?php } ?><?php if (is_single()) {
-																											the_title(); ?> | <?php } ?><?php bloginfo('name'); ?></title>
+																							the_title(); ?> | <?php } ?><?php bloginfo('name'); ?></title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:700,900" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/slick/slick.css' ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/slick/slick-theme.css' ?>" />
@@ -68,9 +68,8 @@
 			<!-- End Contact Information -->
 		</aside>
 		<nav id="mainMenu" role="navigation">
-			<input type="checkbox" id="reveal-menu" role="button">
-			<label class="mobileMenu" for="reveal-menu" onclick><img src="<?php echo get_template_directory_uri() . '/assets/icons/menu.svg'; ?>" alt="" />Menu</label>
+			<input type="checkbox" id="reveal-menu" role="button" aria-labelledby="menu-label">
+			<label id="menu-label" class="mobileMenu" for="reveal-menu"><img src="<?php echo get_template_directory_uri() . '/assets/icons/menu.svg'; ?>" alt="" />Menu</label>
 			<?php get_template_part('mainmenu'); ?>
-
 		</nav>
 	</header>
