@@ -155,3 +155,40 @@ jQuery("#mainContent .personalvCard ul li").each(function () {
   jQuery(this).removeClass("xls");
   jQuery(this).removeClass("pdf");
 });
+
+/*
+=============================================================================================================
+Translation Menu
+=============================================================================================================
+*/
+window.onload = function () {
+  var wrapper = document.querySelector(".trp-language-wrap");
+  if (wrapper) {
+    var newAnchor = document.createElement("a"); // create new anchor element
+    newAnchor.href = "https://provo.edu/translations/"; // set href attribute
+    newAnchor.textContent = "Request Translation"; // set link text
+    wrapper.insertBefore(newAnchor, wrapper.children[1]); //insert new anchor before first child
+
+    var targetElement = wrapper.querySelector(
+      ".trp-floater-ls-disabled-language.trp-ls-disabled-language"
+    ); // find the target element
+    if (targetElement) {
+      targetElement.textContent += " - Selected"; // append "current lang" to the existing text
+    }
+  }
+  var parentElement = document.getElementById(
+    "trp-floater-ls-current-language"
+  ); // get the parent element by ID
+  if (parentElement) {
+    var targetElement = parentElement.querySelector(
+      ".trp-floater-ls-disabled-language.trp-ls-disabled-language"
+    ); // find the target element inside the parent
+    if (targetElement) {
+      var img = document.createElement("img"); // create new img element
+      img.src = "https://provo.edu/wp-content/uploads/2024/01/translate.png"; // set src attribute
+      img.alt = "Translate"; // set alt attribute
+      targetElement.innerHTML = ""; // clear the current content
+      targetElement.appendChild(img); // append the new image
+    }
+  }
+};
