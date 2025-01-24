@@ -2,7 +2,7 @@
 	Theme Name: Provo City School District 2019
 	Author: District Web Team
 	Author URI: https://employee.provo.edu/technology/
-	Version: 1.0.5-1
+	Version: 1.0.6
 */
 /*================================================================================================================
 Variables
@@ -69,6 +69,7 @@ iframe,
   top: auto;
   bottom: 0;
 }
+
 
 /*================================================================================================================
 General Purpose Styles
@@ -1531,8 +1532,6 @@ Footer
   margin-left: 5px;
 }
 
-
-
 /*
 ================================================================================================================
 Directory styles
@@ -1912,7 +1911,6 @@ Gallery Page template styles
 low height viewport
 ================================================================================================================
 */
-/* @media (max-height: 720px) and (max-width: 600px){ */
 @media (max-height: 720px) {
   #contentArea {
     position: static;
@@ -1930,7 +1928,6 @@ low height viewport
     position: static;
     clear: both;
     padding-top: 5px;
-    /* height: auto; */
   }
 }
 
@@ -2030,9 +2027,6 @@ blockquote p {
   font-style: italic;
 }
 
-
-
-
 /*
 =====================================================
 Print Styles
@@ -2117,4 +2111,41 @@ Rob Requested the position of the edit link be moved.
   text-align: center;
   font-size: 1.2em;
   z-index: 9999;
+}
+
+/*================================================================================================================
+Collapsible Button
+  ================================================================================================================*/
+.collapsible-button {
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 10px 0;
+}
+
+.collapsible-button:hover {
+
+  transition: border-left 0.3s ease;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+.collapsible-button::before {
+  content: '+ ';
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-right: 1px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.collapsible-button.exposed::before {
+  content: '- ';
+  transform: rotate(180deg);
+}
+
+.collapsible-button.exposed {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }

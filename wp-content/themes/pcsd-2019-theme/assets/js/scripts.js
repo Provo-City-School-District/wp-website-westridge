@@ -155,7 +155,6 @@ jQuery("#mainContent .personalvCard ul li").each(function () {
   jQuery(this).removeClass("xls");
   jQuery(this).removeClass("pdf");
 });
-
 /*
 =============================================================================================================
 Translation Menu
@@ -192,3 +191,23 @@ window.onload = function () {
     }
   }
 };
+/*
+=============================================================================================================
+Collapsible Content
+=============================================================================================================
+*/
+document.addEventListener("DOMContentLoaded", function () {
+  var buttons = document.querySelectorAll(".collapsible-button");
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var content = this.nextElementSibling;
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        this.classList.add("exposed");
+      } else {
+        content.style.display = "none";
+        this.classList.remove("exposed");
+      }
+    });
+  });
+});
