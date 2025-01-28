@@ -195,19 +195,44 @@ window.onload = function () {
 =============================================================================================================
 Collapsible Content
 =============================================================================================================
-*/
-document.addEventListener("DOMContentLoaded", function () {
-  var buttons = document.querySelectorAll(".collapsible-button");
-  buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      var content = this.nextElementSibling;
-      if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block";
-        this.classList.add("exposed");
-      } else {
-        content.style.display = "none";
-        this.classList.remove("exposed");
-      }
+*/ document.addEventListener("DOMContentLoaded", function () {
+  function toggleCollapsible(button) {
+    var content = button.nextElementSibling;
+    if (!content) {
+      return;
+    }
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.classList.add("exposed");
+    } else {
+      content.style.display = "none";
+      button.classList.remove("exposed");
+    }
+  }
+
+  function setupCollapsible(buttons) {
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent parent collapsible areas from toggling
+        toggleCollapsible(button);
+      });
     });
-  });
+  }
+
+  function initializeCollapsibles() {
+    var buttons = document.querySelectorAll(".collapsible-button");
+    setupCollapsible(buttons);
+
+    // Handle nested collapsible areas
+    document
+      .querySelectorAll(".collapsible-content")
+      .forEach(function (content) {
+        var nestedButtons = content.querySelectorAll(
+          ".nested-collapsible-button"
+        );
+        setupCollapsible(nestedButtons);
+      });
+  }
+
+  initializeCollapsibles();
 });

@@ -1,5 +1,5 @@
 <?php
-$asset_version = '1.0.6';
+$asset_version = '1.0.7';
 /*==========================================================================================
 Add stylesheet to enqueue
 ============================================================================================*/
@@ -659,7 +659,40 @@ function collapsible_area_shortcode($atts, $content = null)
     return ob_get_clean();
 }
 add_shortcode('collapsible_area', 'collapsible_area_shortcode');
+/*
+============================================
+Collapsible Area Shortcode: [nested_collapsible_area title="First h2 title" heading="h2"]Your content here[/collapsible_area]
+============================================
+*/
+function nested_collapsible_area_shortcode($atts, $content = null)
+{
+    static $nested_collapsible_area_counter = 0;
+    $nested_collapsible_area_counter++;
 
+    $atts = shortcode_atts(
+        array(
+            'title' => 'Click to Expand',
+            'heading' => 'h3', // Default heading level for nested collapsible areas
+        ),
+        $atts,
+        'nested_collapsible_area'
+    );
+
+    $heading_tag = in_array($atts['heading'], array('h2', 'h3')) ? $atts['heading'] : 'h3';
+    $unique_id = 'nested-collapsible-area-' . $nested_collapsible_area_counter;
+
+    ob_start();
+?>
+    <div class="nested-collapsible-area" id="<?php echo $unique_id; ?>">
+        <<?php echo $heading_tag; ?> class="collapsible-button"><?php echo esc_html($atts['title']); ?></<?php echo $heading_tag; ?>>
+        <div class="collapsible-content" style="display: none;">
+            <?php echo do_shortcode($content); ?>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('nested_collapsible_area', 'nested_collapsible_area_shortcode');
 //disable open in a new tab/window checkbox in TinyMCE
 function disable_open_new_window()
 {
