@@ -5,7 +5,7 @@
  Author:       Josh Espinoza, Rob Francom, Shauna Sprunger
  Author URI:   https://tech.provo.edu
  Template:     pcsd-2019-theme
- Version:      1.0.5-a
+ Version:      1.0.6
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  westridge-child
@@ -29,8 +29,6 @@ Variables
 	--theme-white: #fff;
 	--theme-black: #000;
 	--theme-gray: #ccc;
-	--even-tile-bg-color: #e1e9f4;
-	--odd-tile-bg-color: #cddbee;
 	--mega-menu-hover: var(--link-hover-color);
 }
 
