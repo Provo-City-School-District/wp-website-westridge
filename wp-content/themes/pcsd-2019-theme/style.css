@@ -2,13 +2,15 @@
 	Theme Name: Provo City School District 2019
 	Author: District Web Team
 	Author URI: https://employee.provo.edu/technology/
-	Version: 1.0.7
+	Version: 1.0.6
 */
 /*================================================================================================================
 Variables
 ================================================================================================================*/
 :root {
   --white: #ffffff;
+  --even-tile-bg-color: #e5ebf1;
+  --odd-tile-bg-color: #f5f7fa;
 }
 
 /*================================================================================================================
@@ -2148,4 +2150,8 @@ Collapsible Button
 .collapsible-button.exposed {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+}
+
+.nested-collapsible-area {
+  margin-left: 3em;
 }
