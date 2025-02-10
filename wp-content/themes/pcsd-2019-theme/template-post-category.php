@@ -51,7 +51,7 @@
                                     <?php
                                     if (get_field('featured_image', $post_id)) {
                                     ?>
-                                        <img src="<?php echo get_field('featured_image'); ?>" alt="" class="" /></a>
+                                        <img src="<?php echo get_field('featured_image'); ?>" alt="decorative image" class="" /></a>
                             <?php
                                     } elseif (has_post_thumbnail()) {
                                         the_post_thumbnail();
@@ -64,7 +64,7 @@
                         <header class="postmeta">
                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                             <ul>
-                                <li><img src="//globalassets.provo.edu/image/icons/calendar-ltblue.svg" alt="" /><?php the_time(' F jS, Y') ?></li>
+                                <li><img src="//globalassets.provo.edu/image/icons/calendar-ltblue.svg" alt="calendar icon" /><?php the_time(' F jS, Y') ?></li>
                             </ul>
                         </header>
 

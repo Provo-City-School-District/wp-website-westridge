@@ -10,9 +10,9 @@
 					<header class="postmeta">
 						<h1><?php the_title(); ?></h1>
 						<ul>
-							<li><img src="//globalassets.provo.edu/image/icons/calendar-ltblue.svg" alt="" /><?php the_time(' F jS, Y') ?> /</li>
-							<li><img src="//globalassets.provo.edu/image/icons/person-ltblue.svg" alt="" /><?php the_author_posts_link() ?> /</li>
-							<li><img src="//globalassets.provo.edu/image/icons/hamburger-ltblue.svg" alt="" /><?php the_category(', ') ?></li>
+							<li><img src="//globalassets.provo.edu/image/icons/calendar-ltblue.svg" alt="calendar icon" /><?php the_time(' F jS, Y') ?> /</li>
+							<li><img src="//globalassets.provo.edu/image/icons/person-ltblue.svg" alt="author icon" /><?php the_author_posts_link() ?> /</li>
+							<li><img src="//globalassets.provo.edu/image/icons/hamburger-ltblue.svg" alt="category icon" /><?php the_category(', ') ?></li>
 						</ul>
 					</header>
 					<?php
@@ -80,12 +80,12 @@
 							<?php
 							if (get_field('featured_image', $post_id)) {
 							?>
-								<img src="<?php echo get_field('featured_image'); ?>" alt="" class="" /></a>
+								<img src="<?php echo get_field('featured_image'); ?>" alt="decorative image" class="" /></a>
 					<?php
 							} elseif (has_post_thumbnail()) {
 								the_post_thumbnail();
 							} else { ?>
-						<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/building-image.jpg'; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="217" height="175">
+						<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/building-image.jpg'; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Building Photo" width="217" height="175">
 					<?php } ?>
 					</a>
 					</div>
@@ -96,7 +96,7 @@
 						} ?></h2>
 					</a>
 					<ul>
-						<li><img src="//globalassets.provo.edu/image/icons/calendar-ltblue.svg" alt="" /><?php the_time(' F jS, Y') ?></li>
+						<li><img src="//globalassets.provo.edu/image/icons/calendar-ltblue.svg" alt="calendar icon" /><?php the_time(' F jS, Y') ?></li>
 					</ul>
 				</header>
 				<?php echo get_excerpt(); ?>
